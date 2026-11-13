@@ -1,4 +1,4 @@
-# Air Quality Analysis & Time Series Forecasting via XGBoost
+## Air Quality Analysis & Time Series Forecasting via XGBoost
 
 A machine learning time-series forecasting pipeline built to predict hourly Carbon Monoxide CO(GT)concentrations using the **UCI Air Quality Dataset**. This project covers end-to-end data preprocessing, cyclical temporal feature engineering, lag variable construction, and gradient-boosted decision tree modeling.
 
@@ -9,7 +9,7 @@ A machine learning time-series forecasting pipeline built to predict hourly Carb
 Urban air quality monitoring generates high-frequency multivariate sensor data prone to missing entries and nonlinear daily patterns (such as rush-hour traffic spikes and weekend shifts). This pipeline transforms raw environmental sensor readings into a structured time-series dataset and evaluates predictive performance using **XGBoost** alongside a baseline **Ridge Regression** model.
 
 ### Key Highlights
-* **Target Variable:** Hourly Carbon Monoxide concentration (`CO(GT)` in $\text{mg/m}^3$).
+* **Target Variable:** Hourly Carbon Monoxide concentration (CO(GT))
 * **Dataset:** [UCI Machine Learning Repository – Air Quality Data Set](https://archive.ics.uci.edu/dataset/360/air+quality) (9,357 hourly instances recorded between March 2004 and April 2005).
 * **Validation Strategy:** Strict **80/20 chronological train-test split** to prevent temporal data leakage.
 
@@ -35,7 +35,7 @@ The raw dataset (`AirQualityUCI.csv`) was cleaned and transformed into `AirQuali
 
 Models were trained on the first 80% of the timeline and evaluated on the unseen final 20% (January 2005 – April 2005).
 
-| Model | Features Used | RMSE | $R^2$ Score |
+| Model | Features Used | RMSE | R^2 Score |
 | :--- | :--- | :---: | :---: |
 | **Ridge Regression (Baseline)** | Temporal + 3-Hour Lags | ~0.63 | ~0.79 |
 | **XGBoost Regressor** | Temporal + 3-Hour Lags | **~0.60** | **~0.81** |
@@ -44,8 +44,9 @@ Models were trained on the first 80% of the timeline and evaluated on the unseen
 
 ---
 ## Install dependencies
+
 pip install pandas numpy scikit-learn xgboost matplotlib
----
+
 
 ## Repository Structure
 
